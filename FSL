@@ -1,0 +1,505 @@
+bhagwan22@developer.com
+TrailHead Playground 6
+
+Second User : ServiceResource@bharat.com(mailatbharat.s@gmail.com)
+			  Te$t@1234
+			  
+			  
+AGENTS CREATE WO FROM "WORK TYPE TEMPLATES" ---> DISPATCHER assign WO to service appointments and resources. 			  
+====================
+Bsically FSL is the salesforce sweet help you to manage and enhance your besiness visibility and customer reach.
+
+(#) FSL improves your business productivity ---- SPECIALLY!!! for business employe mobile workers or contractors!
+ for example: TELECOMMUNICATION, RETAIL, CHILD CHARE, VANDING MACHINE SERVICE, WASTE MANAGEMENT, FINANCIAL SERVICE and many more.
+ 
+ 
+ and if you look into  the wider picture each indusry have ther mobile workers which requires a lot of work to make thing go perfectly. 
+ LETS try to understand this by taking an exmple of TV MACHENIC
+ ========
+ 
+		whole process include :  administrators, agents, dispatchers, and mobile workers(Technician) and people who make service calls. Each one has there specific job 
+ 
+ So, managing!! & verifying!!  work is UPTO THE MARK is a little tedious job!!!  Don't you think?
+ But thanks to salesforce FSL
+ that manages and automate-- APPOINTMENTS, Dispatching mobile workers, equipments, stock,Progress status and tracking vehicle location. So you can provide a better customer experience!! and better relation.
+ More importently  IT CAN BE SETUPed according to the ORGANISATION need.
+ ============
+ NOW LET'S see the objects and the steps that are used to track the progress.
+ FIRST
+ Administrator : Sets up field service features ---- includes installing the Field Service Lightning managed package and Field Service Lightning mobile app.
+ 
+	THEN
+ (1) Agents create work orders as customer service calls come in.
+ (2) The dispatcher schedules appointments, optimizing them according to who has the right skills, is carrying the right parts, who is in the right location and accordingly notify them.
+ (3) The mobile resources (or technicians) complete the service appointments and close out the work orders.
+ 
+ 
+ ========
+ 3 IMP FEATURE OF FIELD SERVICE Lightning
+ -----------------------------------------
+ (#) Core Field Service Lightning features
+ (#) Scheduling and optimization from a managed package
+ (#) A mobile app for your mobile workforce
+ 
+======
+
+So TO START WORKING WITH FSL... what we need is ....standard field service features & “Field Service" Standard user permission. :) which we already have 
+But
+we also need special permission set licenses to view the dispatcher console, use the mobile app WHICH WE will SEE LITTLE LATER.
+
+
+NOW let's get familier with some of the useful objects and standard FLS feature that salesforce provides.
+Service resources
+Service Crews
+Work Order  :  request for field service work
+Work Appiontments
+Work Type
+Skills
+Product Required
+Product Items
+Product Transfer
+Service resources
+operating hours
+Time Sheet
+Return Order
+Service report Templates
+AND
+auto generated WO from MAINTENANCE PLAIN
+
+
+
+
+ALSO
+fully functional FSL enables GeoCoding which mean tracking of mobile workforce and products stock became very simple.
+FSL comes with a MANGED PACKAGE Link ...
+which provides a customizable schedule, real-time map, and dispatcher console so you can get the right tech to the right job at the right time and more importently on there phone and even without internet. :D
+
+IN GENERAL FSL CAN BE CATEGORISED IN THREE WAYS
+(#) 1. CORE FSL features : for plan, perform track all of FSL work---- from wo, to installing, repair, maintainace and even performance reporting
+(#) 2. FSL manged package: for dispatcher --- Optimize schedule and availability give access to overall view of progress, chart and map
+(#) 3. FSL Mobile app :  for MOBILE WORKFORCE -- view appointments, get access to useful information anytime from anywhere -- WO, Contact detail, address. Also able to create follow up task and logs, Chatt with other Technician and Knowledge articles to stay up to date with the best solution.
+and more importantly "Field Service Lightning" mobile app is available for free on the App Store and Google Play.  :D
+
+=====
+
+					@@@@@ STEPS @@@@
+				 <<<<=================>>>
+				 
+	### Step1: Quick find ---- > field service setting ---> enable field service lightning
+	    ======
+		  THEN
+		Setup your FSL
+			LIKE
+			  (@#) enable notification for Workforce by  ----> Enable notifications
+			  (@#) Under Auto-Created Service Appointments, set the Days After Created Date to 3.----> This means the due date on auto-created appointments is three days after the created date.
+			  (@#) Sepecify which KNOWLEDGE articles to suggest  to workforce based on which field (MAX field to conside 5 and Min is 1)
+			  
+	(### Step2: 	
+		=======
+				CREATE/UPDATE USER to Available as "SERVICE RESOURCE" --->
+					CHECK:  "Knowledge user"
+					CHECK:  "Service Cloud User"
+					Select TimeZone:  Eastern Time (America/New_York)
+					
+				SAVE
+			[[[[ NOTE: now we can assign USER as a service resource. SERVICE RESOURCE:- Person Which bring service to the customers. ]]]
+			
+	(### step3:  CRETAE/ASSIG A SERVICE RESOURCE
+	============
+				(***)APP LAUNCHER ---> "Service resource"---> create one by 
+															 NAME
+															 USER(lookup)
+															 Resource type (TECHNICIAN, DISPATCHER, CREW, AGENT etc )
+															 and ACTIVE
+															
+															save
+															
+															
+	(### step4:	 SET TERETORY AND WORKING HOUR OF SERVICE Resource
+	============
+					service territories help you track your field service work, help you set terms in service aggrement and working hours.
+					Because no technician wanted to drove it's car 40-50 mile at 3:00AM ...M I Correct> Yaaass!!!  Because Everyone  prefer to work in a location near to there home, and at there availability:D 
+					
+					there for Once we have created oure service resources it is very necessory to set there "OPERATING HOURS" according to company operating time zone. 
+					 (***) So "Field Service Lightning" can optimize your ---->> service appointments,
+																				considering your service agreements, 	
+																				employee schedules, and regional holidays
+																				i.e let you take care of your workforce too
+									
+					step:
+					=====
+					
+						App Launcher --> "Operating hours" ---> NEW (select your Time zone)
+				===============		
+				Similarly !! 
+				
+					(***) "Manage Service Territories"  -------> "Service Territories: ------>>> enter NAME, OPERATING HOURS(lookup), Active[{ imp to add members to this Territory 
+																																				  and associate it with WO/appointments }]
+				
+				Basicly Service territories represent geographical area where your field service team works.
+				Service territories help you organize your workforce. They typically represent geographical areas where your teams work, such as Los Angeles. They can also be functional territories, such as field sales and field service. So, for example, you may assign a technician with a home base of Los Angeles to the Los Angeles territory.
+				
+	(####  Also a technician can work in more than one territory. so  we can’t assign the operating hours directly on the service resource detail page.  
+	SERVICE RESOURCE- (MAIN/PARENT OBJECT) 
+	===========================
+	
+									Service Resource RELATED LIST:
+									_______________________________
+									-------------------------------
+									(#) Service Resource History
+									(#) Service Appointments
+									(#) Service Appointments History
+									(#) Skills
+									(#) Service Territories Member  --- 
+									(#) Absences
+									(#) Time Sheet
+									(#) Service Crews
+									(#) Shift
+									(#) files
+									(#) Notes & Attachments	
+									
+			
+		
+		APP Launcher --------->  SERVICE RESOURCE--------->  RELATED lIST  ServiceTerritory ------------>>  create service territory member(Lookup)  
+		
+		NOTE: SERVICE TERRITORY MEMBERS IS THE "JUNCTION OBJECT" between --- SERVICE RESOURCE and "SERVICE TERRITORY"
+			
+			
+	 "Operating hours" and "mobile workers are assigned to territories" to keep your field operations running smoothly.		
+					
+					
+	=================================
+	OVERVIEW:
+	========
+		create operating hours
+		create service territorie
+		creates service resource
+		create service territory member(JUNCTION OBJECT service resource ans service territory)
+		
+					
+ ================================================================ XXXX ======================================== XXXX =========================================================
+			
+														(####  SKILL and PARTs requireds  ####)
+
+							
+			(#) Here Every thing revolves around the WO. So how do we create work order? Lets understand that??
+				
+				We create Work Order by "WORK TYPE"
+					Work types are easy templates you can create for those common jobs your mobile workforce performs.
+					for Ex: 
+							The Ac service,  cable service provider 
+							
+			(#) Some job that field Technicians do almost everyday AND THE AGENTS HAVE TO CREATE workorder of them ALMOST EVERY HOUR.
+			    TO make there life easy we can take use of WORK TYPE. 
+			==> With which we  can add the approximate time and specify the parts and skills required to do a job so the right mobile resource is assigned the task at the right time.
+				So Agents can quickly create work orders when cable install jobs come in.
+			
+			
+		(###)WORK Type : basicly Work Type are used to create work order
+			=========
+			
+			App Launcher ---> "Work Type" ---> NAME
+											   ESTIMATED Duration
+											   Duration Type(Hours, Min)
+											   Auto-Create Service Appiontment --> i.e every time a WO created with this WT a new service appointment is created.
+											   
+											   Also every WT requires a specific SKILLS to complete.---IMAGIN YOU WANTE TO INSTALL A CABLE AND the person reaching out to you is a gardner. :D 
+		XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX########XXXX		
+			@@@@ CREATE SKILLS FROM SALESFORCE CLASSIC
+			================================================
+				- ADD TO WT related list
+				- ADD TO SR related list
+				- even we can assign the skills to work orders, and work order line items.
+			
+			
+								
+			sf classic ---> search "skills" ---> Skills --> new
+		
+
+		NOW
+				Add SKILL TO THE WT "Skill Required Related list"
+				(Skill requirement is the junction object between skill and WO, WT, WO line item, job profile )
+				
+			
+						
+		AND
+			
+				Add "SKILL" to "Service Resource" skill related list. 
+				we create a SERVICE RESOURCE SKILL(junction between SR and SKILL)
+				
+				select SR ----> skill related list --> new ----> add skill, Skill Level, start date
+		
+
+
+NOW WE HAVE ADDED THE RIGHT SLILL TO THE SERVICE RESOURCE this time to add right parts need to finish the job. which they can get from INVENTORY lOCATION NEAR HIM
+also There can be many FIELD SERVICE INVENTORY LOCATION
+
+	SO	
+		(###)PRODUCT(PARTS) :- 
+			============
+							IDENTIFY ITEMS NEEDED
+							Create INVENTORY Location
+							CREATE PRODUCTS
+							ASSOCIATE PRODUCTS WITH FIELD SERVICE LOCATION(INVENTORY LOCATION) @@@@---@@@--->> note: NOTE: "PRODUCT ITEMS"  junction object between "Location" and "Product" 
+							
+							updtae WT with Required pparts needed
+							
+					======xxx-----xxxx====XXXX=====XXXXX
+							
+							
+						(#)	Create : Products  ====> NAME, ACTIVE
+						
+						TO CREATE AN INVENTORY LOCATION:
+						________________________________
+						--------------------------------
+						
+						(#)	Cretae :search "locations" -----> pagelayout ---> Add "Inventory location" checkbox to layout --> SAVE
+												now
+												create "Locations record" ---> Name, LocationType(Vsn, Warehouse, Site), Inventory Location(check),Time Zone
+					
+				
+		NOW WE HAVE CREATED "Inventory Location" THIS TIME TO ADD PRODUCTS TO it:--- by going into the PRODUCT ITEM related list.
+					location related list --->  NEW product item
+				
+				NOTE: "PRODUCT ITEMs"  junction object between "Location" and "Product" 
+				
+			@@@ It's TIME TO SPECIFY "INVENTORY" FOR WHICH TERRITORIES 
+			
+					Since A Service territory can have multiple INVENTORY LOCATION So
+					(#) Location record----> Related list "Service Territory Location"  -->new
+					
+					
+							
+							
+		(####)   WORK TYPE: =================>>>>> NOW UPDATE WORK TYPE related list "REQUIRED PRODUCTS" with above product
+		
+	
+
+UFFF...... finally we have created a WT NOW LETS SEE HOW TO CREATE A WORK ORDER 
+<#>	<#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#><#>
+
+If  you are not from a service background you might be thinking what is a wo? when we create a WO? lets take a moment to understand, whenever a customer ask for a product or service organisation provide. AGENTS crate a workorder for that.
+So A work order can be understand as specific customer request.
+And
+Having a work type to keep track of everything needed to complete the request.
+
+
+WORKORDER : NEW
+=========
+			WorkType(Lookup)
+			Status
+			Priority
+			Subject
+			Descriotion
+			work Type
+			
+			RELATED OBJECT
+			===============
+					products consumed  -- Products consumed are products that were used to COMPLETE a work order or work order line item.
+					Products Required --  
+
+Work Order Line Item: (Sub Task)  i.e they function same as WO but they are associated with a parent WO.
+=====================
+
+			WO(Lookup) PARENT Task
+			work Type (sub task work type)
+
+			RELATED OBJECT
+			===============
+					products consumed
+					Products Required
+					
+--------------------------<@><@><@><@><@><@><@><@><@>--------@><@><@><@><@><@><@>----------<@><@><@><@><@><@><@><@>	--------<@><@><@><@><@><@><@><@><@>--------------------------
+					
+			NOW WE HAVE ALL THE DETAILS of task needto be done by our TECHNICIANS
+			Let's ASSIGN it to SERVICE RESOURCE
+			
+		Before that we have to crate a WO SERVICE Appointment
+			
+			So go to WO related list 
+			and you will find a SERVICE APPOINTMENT IS ALRADY CREATED WITH THE DETAILS this is because ....	
+			
+			NOW
+			
+			Go to "SERVICE APPOINTMENT" related list ---> NEW "ASSIGNED RESOURCE"  ---> assing it to a SERVICE RESOURCE(lookup USER)
+			
+	ONCE APPOINTMENT IS ASSIGNED TO A SERVICE RESOURCE
+	=====================================================
+			we can update the APPOINTMENT STATUS
+								Status = Schedule
+								Scheduled StartDate   --- need to be between EARLIEST START PERMITTED and DUE DATE
+								Scheduled EndDate
+								
+	
+NOW SERVICE RESOURCE IS GOOD TO GO ---->>>> once she will finish she will update the SERVICE APPOINTMENT status.
+
+
+Similarly!!! assign WO LineItem to a servicer resouce... :)
+
+______________________________________________________________________________________________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+REMEMBER :- updating "service appointment" STATUS doesn't update WO or WO Line Item status.
+			So once work is done have to manually update the status
+			
+
+WE ALSO KNOW To COMPLETE A JOB A TECHNITION MAY HAVE UTILIZED PRODUCTS/Items, ALSO VERY NECESSORY TO KEEP TRACK OF ALL OF THIS.
+So once a SERVICE APPOINTMENT IS COMPLETED i.e Wo OR WO LINE ITEM is completed to .... it's best to add detail to PRODUCT COMSUME related list.
+
+				PRODUCT CONSUME:- junction object between WO and PRODUCT Item
+																				Select Product Item(Lookup)... that got conumed
+																				Quantity
+																				
+		What’s really cool is that when a consumed product is tracked... WHAT I MEAN IS 
+				whenever a product consume is created then ... it got track under "Product Item Transaction" related list of PRODUCT ITEM and quantity got sub from PRODUCTITEM too
+		isn't it great?
+
+______________________________________________________________________________________________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+			Ufff a lot of work ....Right!!!... But u know this is not done yet. :) Nothing is more satisfying than a job well done and a satisfied customer.
+			Now lwt's get to know how our custome feels about the service...
+				BY
+				Create a service report template for your customers with details about how your mobile workers solved their issues for work orders, work order line items, and service appointments and email them directly to the customer.
+		
+		HOW TO CREATE A SERCVE REPORT TEMPLATE?
+		======================================
+		
+			Setup ---> Service Report Template ----> NEW and customize it
+			
+		(##) we can "CREARE A SERVICE REPORT" from the QUICK ACTION on WO  ----> "Create Service Resource"
+				AND
+				The service report is saved in the Service Reports related list on the work order.
+				
+				
+			
+			====================================================================================================================================================================
+			@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			
+	NOW WE HAVE FAMILIER WITH THE PLAYERS INVOLVE IN FSL. 
+	
+	
+	EXAMPLE:
+			The company started out with a few installers and an office manager......who managed installer’s tasks along with everything else. Then This Company hired more installers and a dispatcher. But the company is growing fast, and it’s too much for the dispatcher to handle using the current tools. Installers are ending up at the wrong place or they’re arriving at the wrong time. Sometimes, they’re at the right place at the right time but don’t have the tools they need. And customers are getting frustrated.
+	
+			Our company needs better tools to coordinate its expanding field service team. Field Service Lightning and its managed package are just what Our company needs to solve those problems. With it, the dispatcher can manage everything from a single console, where they can create and optimize schedules and resources.
+
+Let’s see how.
+
+user NAME:
+			singh22bhagwan@resourceful-fox-hu883j.com
+			Da$tan22
+			
+			
+					
+=============================================<<>>			
+	Install and set up the Field Service Lightning managed package.
+	Create a service territory.
+	Create a service resource and a dispatcher.
+=============================================<<>>
+	
+	
+	
+	- The managed package powers up your field service team with some great new features.
+		(+) Powerful scheduling features enable dispatchers to see appointment lists, scheduling actions, a resource availability chart, and an interactive map in one place in the dispatcher console.
+		
+		
+			
+			
+		INSTALATION SETPS: It's time to install the goodness of the Lightning Field Service Managed package right into our ORG 
+		===================
+					
+			(##) Step1:		open Incognito window -----Then ----->> https://fsl.secure.force.com/install
+			
+			(##) Step2:		after installing we got two application 
+							=========================================
+								"Field Service"  		--------- For Dispatcher [lets dispatchers do what they do best: view and manage an airtight service schedule!]
+								"Field Service Admin"	 -------- For ADMIN [customize the managed package, manage scheduling and optimization, and use the dispatcher console.]
+							
+							Two Tabs
+							========
+								Field Service tab(On FIELD SERVICE app) :-------->>  leads to the dispatcher console, where you can manage your team’s service schedule.
+								Field Service Settings tab  			:-------->> where you customize the managed package’s settings and access the Guided Setup tool.
+								
+			(##) step3:  FSL PERMISSION SET : permission sets that determine the access for EACH OF COMMON FS players(6 players)
+				
+							FSL app Admin ---> Field Service Settings ---> Permission set ----> Get Started ---> Permission Set -------> Click "Create Permission" for all 6 --> SAVE
+							
+			
+			(##) Stap4: Assign yourself FSL ADMIN Permission
+						Setup ----> Permission set ---> "FSL Admin Permissions" ---> Manage Assignment ---> Add Assignments---> Select Yourself
+						
+						
+						
+			(##) Step 5: Build your Team
+						 (##) Create Service Territory
+							===============================
+							 Like technicians,  dispatchers are also assigned to service territories. When they’re working in their dispatcher console, they see only the territories that they manage.
+							 
+						 
+						FSL app Admin ---> Field Service Settings ---> Go To Guided Setup ----> Click "Create Service Territories" ---> Enter Name "Los Angeles"
+																			OR
+																		Service Territories tab
+																		
+						
+				NOW
+					SET PERMISSION FOR SR/ CREATE A SR
+					=====================
+					Lets create a SR(James) for the new territory. So as a dispatcher we can manage James’s appointment assignments from the dispatcher console. 
+					
+					CREATE A USER
+						Role	:  Instalation and Repair Service
+						Licence	:	SALESFORCE
+						Knowledge User
+						Service Cloud User
+						Deselect- Generate new password and notify user immediately
+						
+						[[... JamesSRBharat@gmail.com ...]
+						
+				(##) SET SR territory and PERMISSION from FSL Admin
+					 --------------------------------
+						
+				FSL app Admin ---> Field Service Settings ---> Go To Guided Setup ---->  "Create Service Resources" ---> New service resource--> select USER and TERRITORY
+																														 Give FSL scheduling and FSL Mobile Licence/permission
+																														 
+											
+							ALRIGHT...
+							
+						James is all set up to start receiving work.
+						
+			
+				(##) LETS ASSIGN OURSELF AS ..... Dispatcher of Los Angeles SERVICE Territory. So that we can start assigning work to James
+				
+			 FSL app Admin ---> Field Service Settings ---> Go To Guided Setup ----> "Create Dispatchers and Agents"
+			 
+			 THEN 
+		   ========
+			 
+			Click  "Add" ---> select USER for "Assign Service Territories to"   ----> THEN -----> Select SERVICE TERRITORY "Los Angeles" ---> Click Assign Service Territories
+			
+			THEN
+		  =========
+			
+			from Dispatcher assignment page ---> assign yourself the dispatcher license and permissions
+			
+<@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@><@>			
+		THIS TIME TO ACCESS DISPATCHER CONSOLE AND GIVE JAMES WORK
+		
+		Field Service app----> Field Service tab ----> [... "IT WILL OPEN GANTT" ...] ------>Select Territory 
+		
+		
+======================================================================================================================================================================================
+
+
+		EVERY APPOINTMENT ASSIGNED TO SERVICE RESOURCE WILL BE DISPLAYED ON THE GANT.
+			or you can add filter according to your preferences.
+			
+======================================================================================================================================================================================
+
+
+
+
+	
+			
+			
+		
