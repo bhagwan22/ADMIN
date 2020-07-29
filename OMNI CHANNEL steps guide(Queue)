@@ -1,0 +1,92 @@
+
+												@@@ QUEUE BASED OMNI CHANNEL BASIC @@@
+ 
+ 
+ _____________________________________________________________________________________________________________________________________________
+ ---------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ facilitates multichannel support
+ Omni-Channel routes work to the right agent.
+ different routing types that Omni-Channel supports.
+ 
+ 
+ channel : chatt, message, whats app, email etc //Service channels are ways that customers can contact your company. 
+												Multichannel support means offering your customers multiple ways to get in touch, so they can connect when and how they want./
+ 
+  increase the efficiency of her contact center, and make life easier for her support managers and agents.
+  
+  Keeping track of all the incoming information and support requests on multiple channels
+  
+  i.e Service Cloud lets you bring all of these channels into the Service Console, so it’s easy for agents to follow your business practices and help customers no matter how they contact you. 
+  
+  work and work items  - different types of Salesforce records that Omni-Channel routes, such as cases, leads, web chats, custom objects
+						 Omni-Channel takes incoming work items and routes them to the most qualified, available support agents using the routing criteria that you define.
+						
+						
+   ROUTING TECHNIQUE : Queue-Based Routing
+					   SKILL BASED ROUTING
+					   EXTERNAL ROUTING
+					   
+					Queue Based : organize your agents into different queues, which generally represent a single skill.
+									For example, you can have a Billing Queue and a Technical Support Queue.
+								
+									In queue-based routing, Omni-Channel assigns work to a queue. Agents are members of a queue, and Omni-Channel assigns work to agents based on the priority of the queue.
+									
+					Skill Based routing : For big complex Organisations and there products
+					
+	
+	
+	can even choose to use both queue-based and skills-based routing at the same time in its org, but not for the same work items.
+	
+	
+	(##) QUEUE BASED ROUTING
+	
+			Omni-Channel uses three factors to prioritize a work item.
+				First, it considers the priority of the queue from which the work item came.
+				Next, it considers the amount of time the work item has been waiting in the queue.
+				Finally, it considers the members of the queue who are available to receive new work items.
+				
+			 think of queues as different buckets that Omni-Channel drops work into.
+			 
+			 STEP
+			 0. ENABLE OMNI CHANNEL
+			 1. CRAETE A QUEUE AND SET PRIORITY
+			 2. DEFINE ROUTING CONFIGURATION //set the priority, Routing Model and Capacity  - Determine how omni channel rout work to agent
+												Capacity - capacity that represents how much agent bandwidth it takes up.
+												routing Model - is what omni-channel used
+															(#) Leaste Active -  agent with least amount of open work
+															(#) Most Available - agent with greatest difference between work item capacity and open work items.
+												
+					example:
+							For example, a real-time web chat can have a higher priority than a case, because you’ve got a customer on the other side of the chat who wants to talk with an agent right now. A case can have a larger size than a chat, because working on a case can take up more of an agent’s time and energy than responding to a web chat.
+				
+				
+				3. SET ROUTING CONFIG TO QUEUE
+					Support Object -  case
+				
+				
+				4. Set PRESENCE CONFIGURATION FOR AGENT : - iT'S CAPACITY AND 
+							// default created once omni channel enable
+							// one use can be added to only one PC at at time
+							// can be assign to profile OR user
+				
+				5. MAKE presence statue availabe to user : 
+						USER --> SELECT PROFILE --> Enabled Service Presence Status Access(RELATED LIST)	
+
+				6. add Omni-Channel to a console app
+					App AManger --> new Lightning App --> Next ----> Console Nevigation, Service setup --> Next --->Add to Utility --> Omni channel --> Next -->Select Object(case,contact etc..) --> Next --> SubTab of, Parent Account (Account) --> Assign app to profile --> 
+				
+				
+			Open omni channel app
+			create a case with priority highe
+			Now Make your self available
+			change case owner to our queue
+			VALLA!!!
+			Accept
+			
+			
+			Thank you
+			
+ 
+ _____________________________________________________________________________________________________________________________________________
+ ---------------------------------------------------------------------------------------------------------------------------------------------
