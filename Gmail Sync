@@ -1,0 +1,89 @@
+
+                                                                    SALESFORCE GMAIL SYNC
+______________________________________________________________________________________________________________________________________________
+
+(*NOTE) Winter ’21, Lightning Sync isn’t available to new Salesforce customers. Einstein Activity Capture is our long-term solution for syncing contacts and events between Microsoft® or Google applications and Salesforce.
+- it varies based on "Microsoft Exchange server connection method" and does not support hybrid exchange server(relation betweem ex service onpremises and office 360 on cloud and have free-busy access i.e read/write access to agent calander)
+
+
+(#) Gmail/OutLook sync : 
+						PRE-REQUESIT: 	
+									1. G-Suite basic,business/Enterprice plan so, the Google service can communicate with Salesforce
+									2. Chrome
+						
+						GUIDELINES FOR reps:
+								https://help.salesforce.com/articleView?id=lightning_sync_admin_google_prepare_user_events.htm&type=5
+								(#) We recommend that reps prepare their Google Calendar events to sync with Salesforce before admins define sync settings. It’s easier for reps to manage events before sync starts than to remove syncing items from Salesforce later. 
+								
+								(#)  Keep in mind that users can only select events syncing from Google to Salesforce. For users set up to sync in the other direction or both ways, all events sync from Salesforce to Google regardless of the option you specify here.
+						
+						PROCESS:
+								1. setup --> gmail Integration & Sync --> ENABLE "let user access salesforce records for gmail"
+								2. get the saleforce chrome extenion and configure with saleforce cred
+									NOTE: to log email form gmail to email -- ENABLE "Enhanced email"
+								
+								3. enable Lightning Sync ==> setup --> gmail Integration & Sync --> Enable "Lightning Sync"
+								how to connect gamil to sf : https://help.salesforce.com/articleView?id=lightning_sync_admin_google_prep_sfdc.htm&type=5
+								
+								4: STEPS
+								----------
+								- From Salesforce, first register the Google API site. Then, select settings to connect the applications using OAuth 2.0 for Google
+								
+								- From Setup, Register a new remote site for https://www.googleapis.com. Don’t disable protocol security for the site, or Salesforce can’t connect with Google.
+								
+								- From Setup, enter Sync in the Quick Find box, then select Gmail Integration and Sync.
+								Select Let users sync contacts, events, or both between Google and Salesforce to enable Lightning Sync.
+								Click Let users sync contacts, events, or both between Google and Salesforce to see additional setup steps.
+								
+								- Select OAuth 2.0 as your preferred connection method.
+								Upload the private key for your Google service account. Your Google admin generated the key when setting up the service account for Lightning Sync.
+								
+						RUN A TEST
+						-----------
+							- From Setup, enter Sync in the Quick Find box, then select Gmail Integration and Sync.
+							- Click Let users sync contacts, events, or both between Google and Salesforce to see additional setup steps.
+							- Under Test your connection, provide the email address for one of the reps you’ve set up to sync on your email server.
+							- Click Test.
+								Lightning Sync checks the connection between Salesforce and your email server and summarizes your connection status.
+						
+						NOW(#)
+							Define sync settings for your sales reps, such as:
+								- Who can sync and what kinds of items they can sync
+								- Whether you want to limit items
+								- What happens when a rep deletes an item from either Gmail or Salesforce
+								https://help.salesforce.com/articleView?id=lightning_sync_gmail_admin_configurations.htm&type=5
+							
+						Customize the Gmail Integration Pane
+						------------------------------------
+						1. https://help.salesforce.com/articleView?id=email_int_setup_custom_pane_parent.htm&type=5
+						
+						2. Create Lightning Email Templates and add the Templates component to a customized App Builder Email Application Pane. Reps can quickly craft email messages using templates instead of writing messages from scratch.
+						https://help.salesforce.com/articleView?id=lightning_email_lextemplates.htm&type=5
+						
+Inbox to the Gmail integration
+-------------------------------
+			PURCHASE Inbox Licence and assignt ot user licence
+			
+			https://trailhead.salesforce.com/content/learn/modules/gmail_integration/gmail_integration_unit_3
+			Awesome features that reps can use in their email when you add Inbox to the Gmail integration.
+						
+			1. Insert open time slots from their calendar directly in an email message. Recipients select which time works best for them, and the integration schedules the meeting. The suggested times dynamically update as a rep’s availability changes, even after the customer receives the email. 		
+
+			2. See when customers open an email and whether they clicked any included links. Reps know with certainty when their customers engaged with what they sent.
+			
+			3. Create shortcuts for the phrases they use most and easily add them to email messages. Reps say goodbye to potentially embarrassing typos and hello to saving time!
+			
+			4. Draft an email message and send it when the customer is most likely online. Because timing is everything, reps can schedule when their customers receive the email, guaranteeing the greatest impact for a potential sale.
+			
+			Setup --> gmail Integration & Sync --> Expand "Lets user access saleforce record from gamil" --> gmail Integration serction --> Edit setting --> Enable "Make Inbox Available to users"
+			Then
+			Assign
+			
+			CUSTOMISE what reps can see
+			----------------------------
+			When Maria turns on Inbox in the Gmail integration, the standard Gmail integration pane includes all Inbox features. Maria still has flexibility to customize how Salesforce content appears in Gmail, and which Inbox features her reps can access.
+			
+			
+			
+______________________________________________________________________________________________________________________________________________	
+
