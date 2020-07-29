@@ -1,0 +1,17 @@
+                                                                  SALESFORCE BUTTON and URL HACKING
+_________________________________________________________________________________________________________________________________________________________________________________
+
+(1) (2) (3) TOPICS
+(#) CONCEPTS
+_________________________________________________________________________________________________________________________________________________________________________________
+
+
+(1) URL HACKING(default value)
+    --------------------------
+/lightning/o/Opportunity/new?useRecordTypeCheck=1&defaultFieldValues=CloseDate={!TEXT(TODAY())}&backgroundContext=/lightning/o/Opportunity?list?filterName=Recent
+
+NOTE: all thing need to be in text
+
+
+(#) we can add/remove list button to list view and related list.
+    For list view we have to add button to "search layout for salesforce classic" --> List view
