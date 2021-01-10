@@ -12,6 +12,10 @@ ________________________________________________________________________________
 
 NOTE: all thing need to be in text
 
+STEPS:
+      copy the url
+      and add defaultFiledValues and nooverrides=1
+      nooverride=1&useRecordTypeCheck=1&defaultFieldValues=LastName=Bhagwan,FirstName=Singh&navigationLocation=LIST_VIEW
 
 (#) we can add/remove list button to list view and related list.
     For list view we have to add button to "search layout for salesforce classic" --> List view
