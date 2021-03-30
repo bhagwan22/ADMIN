@@ -1,0 +1,1 @@
+IF( ISBLANK(Lead_Status_Changed_Date__c), NULL , 'Week ' + IF( (MOD(FLOOR( ( Lead_Status_Changed_Date__c - TODAY() ) / 7), 52 ) + 1) >= 8 , '8' ,IF((MOD(FLOOR( ( Lead_Status_Changed_Date__c - TODAY() ) / 7), 52 ) + 1)<0,"0",TEXT (MOD(FLOOR( ( Lead_Status_Changed_Date__c - TODAY() ) / 7), 52 ) + 1))) )
