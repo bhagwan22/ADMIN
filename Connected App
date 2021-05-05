@@ -1,0 +1,36 @@
+https://trailhead.salesforce.com/content/learn/modules/connected-app-basics
+
+******************************************************************************************************************************************
+CONNECTED APP : INTRO
+******************************************************************************************************************************************
+A connected app is a framework that enables an external application to integrate with Salesforce using APIs and standard protocols, 
+such as Security Assertion Markup Language (SAML), OAuth, and OpenID Connect. 
+Connected apps use these protocols to authorize, authenticate, and provide single sign-on (SSO) for external apps. 
+
+By capturing metadata about an external app, a connected app tells Salesforce which protocol—SAML, OAuth, and OpenID Connect—the external app uses, and where the external app runs. 
+Salesforce can then grant the external app access to its data, and attach policies that define access restrictions, such as when the app’s access expires. 
+
+******************************************************************************************************************************************
+USE Case:
+******************************************************************************************************************************************
+1. To develop a web-based application that pulls data from salesforce - We can cratate a connect app that on bahalf of "web-based" application request salesforce data and define the authorize access.
+
+2. Salesforce as Identity provider: to do so we have to crated "service privider" to Org as connected app.
+	* Use a connected app with SAML 2.0 to integrate a service provider with your org. Salesforce supports SAML single sign-on (SSO)
+	* For example, We built a custom "TikTok" web app that implements SAML 2.0 for user authentication. We want our users to be able to log in to this app with their Salesforce credentials. To set up this SSO flow, configure the "TikTok" web app as a connected app.
+	
+	Note: We can also use a connected app with OpenID Connect to integrate a service provider with your Salesforce org. To use this option, the service provider must accept OpenID Connect tokens.
+
+3. Provide Authorization for External API Gateways : Fro Mulesoft dynamically crate connected app for the new integration systems.
+	* Salesforce can act as the OAuth authorization server for API gateways that are hosted on MuleSoft's Anypoint Platform. MuleSoft’s Anypoint Platform, which is the resource server, can dynamically create client apps as connected apps. These connected apps can send a request to Salesforce asking for access to data protected by the API gateways.
+ 
+4. Manage Access to Third-Party(AppExchange) Apps: 
+	* By selecting the option “Admin approved users are pre-authorized” for the connected app, you can assign specific user profiles to the app. Only the users with this user profile can access the app.
+	* admins can set security policies to control what data the third-party app can access from your org. 
+	* In addition to setting security policies to manage third-party apps, you can uninstall, and—when necessary—block these apps from the Salesforce org.
+	
+Note: 
+1. In connected app developers create and configure authorization flows for connected apps, and admins set policies and permissions to control connected app usage.
+2. A connected app developer is a Salesforce developer or ISV who builds API integrations or external apps that can access Salesforce data as a connected app.
+
+
