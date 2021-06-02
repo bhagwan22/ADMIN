@@ -1,6 +1,20 @@
+                                                                    SALESFORCE SYNC WITH GMAIL AND OUTLOOK
+_____________________________________________________________________________________________________________________________________________________________________
 
-                                                                    SALESFORCE GMAIL SYNC
-______________________________________________________________________________________________________________________________________________
+ NEW: via Einstein activity capture
+||-----------------------------------||
+
+Steps:
+1. Assign permissoin set: Einstein Activity capture
+2. Setup--> einsteing activity capture -> get started
+3. Once enabled
+from user setting -> connect outlook/gmail account
++ 
+on user browser add extension "Salesforce" 
+
+
+   OLD : METHOD
+|| ------------- ||
 
 (*NOTE) Winter ’21, Lightning Sync isn’t available to new Salesforce customers. Einstein Activity Capture is our long-term solution for syncing contacts and events between Microsoft® or Google applications and Salesforce.
 - it varies based on "Microsoft Exchange server connection method" and does not support hybrid exchange server(relation betweem ex service onpremises and office 360 on cloud and have free-busy access i.e read/write access to agent calander)
