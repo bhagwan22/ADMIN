@@ -30,3 +30,9 @@ password=
 
 
 ### Method 3:
+
+
+────────────────────────────────────
+check salesforce data
+────────────────────────────────────
+GET: https://bhagwansfsite-dev-ed.lightning.force.com/services/data/v49.0/query/?q=select+id,name+from+contact+limit+1
