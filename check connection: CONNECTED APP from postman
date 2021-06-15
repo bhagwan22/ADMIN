@@ -1,0 +1,32 @@
+
+													                                CHECK CONNECTION VIA CONNECTED APP
+
+get access token
+----------------
+## METHOD 1
+POST: login.salesforce.com/services/oauth2/token
+─────────
+IN BODY
+─────────
+username:
+password:
+grant_type:
+client_id:
+client_secret:
+
+
+
+## Method 2
+──────────────────
+IN AUTHORIZATION
+──────────────────
+grant_type = password credential
+Access Token URL = https://login.sslesforce.com/services/oauth2/token
+client id =
+client secret = 
+username=
+password=
+
+
+
+### Method 3:
