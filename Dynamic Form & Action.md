@@ -14,4 +14,4 @@
 - GA for custom object
 - bita for standard object
 - filter contition to show and hide action buttons. filter based on field value, parent field value, profile, device
-- setup: click on the `highligh pannel` on lightning record page and select visibility
+- setup: click on the `highligh pannel` on lightning record page and select visibility for record action, quick action and global action
